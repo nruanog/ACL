@@ -1,0 +1,270 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{listings}
+
+
+\title{Proyecto II - SOPES2 \LaTeX{}}
+\author{NATHALY ANDREA RUANO GONZALEZ & CÉSAR ARMANDO MORALES MARTÍNEZ}
+\date{April 2022}
+
+\begin{document}
+\maketitle
+\section{Windows Server}
+Microsoft Windows Server es una familia de sistemas operativos de servidor de clase empresarial diseñados para compartir servicios entre múltiples usuarios y proporcionar un control administrativo integral sobre el almacenamiento de datos, aplicaciones y redes corporativas. Las características clave de Windows Server incluyen Active Directory, administración de información del usuario, seguridad y la capacidad de colaborar con otros directorios.\\
+
+\begin{figure}[htp]
+Creamos a lo usuarios\\
+\centering
+\includegraphics[width=10cm]{wc1.png}
+\end{figure}
+
+
+\begin{figure}[htp]
+\centering
+\includegraphics[width=10cm]{w1.png}
+\includegraphics[width=10cm]{w2.png}
+\end{figure}
+
+
+\begin{figure}[htp]
+\centering
+\includegraphics[width=10cm]{w3.png}
+\includegraphics[width=10cm]{w4.png}
+
+\end{figure}
+
+\begin{figure}[htp]
+\centering
+\includegraphics[width=10cm]{w5.png}
+\includegraphics[width=10cm]{w6.png}
+\end{figure}
+
+
+\begin{figure}[htp]
+\centering
+\includegraphics[width=10cm]{w7.png}
+\includegraphics[width=10cm]{w8.png}
+
+\end{figure}
+
+\begin{figure}[htp]
+\centering
+
+\includegraphics[width=10cm]{w9.png}
+\includegraphics[width=10cm]{w10.png}
+\end{figure}
+
+
+
+
+
+\begin{figure}[htp]
+Creamos carpetas compartidas\\
+\centering
+\includegraphics[width=10cm]{wc2.png}
+\end{figure}
+
+\section{Agregar Linux Mint a Active Directory Domain Service}
+
+\begin{description}
+    \item [Configurarlo host.conf]
+    \item sudo nano /etc/hosts
+\end{description}
+
+\begin{figure}[htp]
+\centering
+\includegraphics[width=9cm]{ub1.png}
+\end{figure}
+
+\begin{description}
+    \item [Actualizar Repositorios]
+    \item sudo apt update
+    \item [Instalar sssd y msktutil]
+    \item sudo apt install sssd heimdal-clients msktutil
+    \item [Configurar Kerberos]
+\end{description}
+
+\begin{figure}[htp]
+\centering
+\includegraphics[width=8cm]{ub4-1.png}
+\end{figure}
+
+\begin{figure}[htp]
+\centering
+\includegraphics[width=8cm]{ub4-2.png}
+\includegraphics[width=8cm]{ub4-3.png}
+\end{figure}
+
+\begin{description}
+    \item  sudo mv /etc/krb5.conf /etc/krb5.conf.default
+    \item  sudo nano /etc/krb5.conf
+\end{description}
+
+\begin{figure}[htp]
+\centering
+\includegraphics[width=10cm]{ub6.png}
+\end{figure}
+
+\begin{figure}[htp]
+\centering
+\includegraphics[width=10cm]{ub7.png}
+\end{figure}
+
+\begin{figure}[htp]
+\centering
+\includegraphics[width=10cm]{ub8.png}
+\end{figure}
+
+\begin{figure}[htp]
+\centering
+\includegraphics[width=10cm]{ub9.png}
+\end{figure}
+
+
+\begin{description}
+    \item  [Movemos la claves y la informacion de Kerberos a un nuevo directorio]
+    \item  sudo mv my-keytab.keytab /etc/sssd/my-keytab.keytab
+\end{description}
+
+
+\begin{figure}[htp]
+\centering
+\includegraphics[width=10cm]{ub10.png}
+\end{figure}
+
+
+\begin{description}
+    \item  [Modificamos el sssd con todos los dominios y claves que vamos a utilizar]
+    \item  sudo nano /etc/sssd/sssd.conf
+\end{description}
+
+
+\begin{figure}[htp]
+\centering
+\includegraphics[width=10cm]{ub11.png}
+\end{figure}
+
+\begin{description}
+    \item  [Ajustamos los permisos]
+    \item  sudo chmod 0600 /etc/sssd/sssd.conf
+\end{description}
+
+
+\begin{figure}[htp]
+\centering
+\includegraphics[width=10cm]{ub12.png}
+\end{figure}
+
+
+\begin{description}
+    \item  [Ajustamos y definimos cuáles son operaciones que deberá ejecutar cada servicio]
+    \item [que requiere autenticación.]
+    \item  sudo nano /etc/pam.d/common-session
+\end{description}
+
+
+\begin{figure}[htp]
+\centering
+\includegraphics[width=10cm]{ub13.png}
+\end{figure}
+
+
+\begin{description}
+    \item  [Reiniciamos el sssd para aplicar los cambios]
+    \item  sudo systemctl restart sssd
+\end{description}
+
+
+\begin{figure}[htp]
+\centering
+\includegraphics[width=10cm]{ub14.png}
+\includegraphics[width=10cm]{ub15.png}
+\end{figure}
+
+\section{Carpeta Compartida}
+
+\begin{description}
+    \item  [Creamos las carpetas compartidas correspondientes]
+\end{description}
+
+
+\begin{figure}[htp]
+\centering
+\includegraphics[width=10cm]{ub16.png}
+\includegraphics[width=10cm]{ub17.png}
+\end{figure}
+
+
+\section{Android}
+
+\begin{description}
+    \item  [Crear Usuario]
+\end{description}
+
+
+\begin{figure}[htp]
+\centering
+\includegraphics[width=10cm]{android1.png}
+\includegraphics[width=10cm]{android2.png}
+\end{figure}
+
+\begin{description}
+    \item  [Creacion de Carpeta Compartida y la Compartimo]
+\end{description}
+
+
+\begin{figure}[htp]
+\centering
+\includegraphics[width=8cm]{android6.png}
+\end{figure}
+
+
+\begin{figure}[htp]
+\centering
+\includegraphics[width=8cm]{android8.png}
+\end{figure}
+
+\begin{description}
+    \item  
+\end{description}
+
+
+\begin{description}
+    \item  [Nos conectamos desde nuestro disposito Android]
+\end{description}
+
+\begin{figure}[htp]
+\centering
+\includegraphics[width=5cm]{android1.1.jpeg}
+\end{figure}
+
+\begin{figure}[htp]
+\centering
+\includegraphics[width=5cm]{android1.2.jpeg}
+\includegraphics[width=5cm]{android1.3.jpeg}
+\includegraphics[width=5cm]{android1.4.jpeg}
+\end{figure}
+\newpage
+
+\section{Windows}
+\begin{description}
+    \item  [Ya creadas las carpetas y las configuraciones nos ]
+    \item [conectamos desde nuestra maquin windows]
+\end{description}
+
+\begin{figure}[htp]
+\centering
+\includegraphics[width=10cm]{windows.jpeg}
+\end{figure}
+
+\section{Youtube}
+LINK \textbf{\textit{https://youtu.be/-UI4LoAiUgU}}
+
+
+\section{Github}
+LINK \textbf{\textit{}}
+
+\end{document}
+
